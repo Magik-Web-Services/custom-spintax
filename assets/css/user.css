@@ -1,0 +1,13 @@
+table.infodatatable th,table.infodatatable td{
+    font-weight: 500;
+    color: #0a0808ad;
+    font-size: 12px;
+}
+table.infodatatable:first-child{
+    /* font-weight: 700; */
+    color: #000;
+    font-size: 16px;
+}
+.text-error{
+    color:red
+}

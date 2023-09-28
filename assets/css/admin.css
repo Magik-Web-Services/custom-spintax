@@ -1,0 +1,147 @@
+.addmetafield:hover {
+    cursor: pointer;
+    color: green
+}
+
+.actionbtn {
+    display: none;
+}
+
+.actionbtn.active {
+    display: block;
+}
+
+.even:last-child td {
+    border-bottom: 0px;
+}
+
+table.table.dataTable a {
+    font-size: 10px;
+    padding: 5px 10px;
+    font-weight: normal
+}
+
+table#listofitems {
+    margin-top: 15px !important;
+}
+
+div.card {
+    max-width: 100%;
+}
+
+.design1terms {
+    display: grid;
+    grid-template-columns: 25% 25% 45% 3%;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.add_more_cate ,.remove_single_cate{
+    padding: 0px 5px;
+}
+
+.design1terms .select2-container--default .select2-selection--multiple .select2-selection__choice{
+    margin: 5px;
+    display: block;
+}
+.design1terms .select2-selection__rendered{
+    font-size: 11px;
+    font-family: system-ui;
+}
+.design1terms .select2-container--default .select2-selection--multiple{
+    padding: 0px;
+}
+.design1terms .select2-container--default .select2-search--inline .select2-search__field{
+    margin: 5px;
+    font-size: 13px;
+}
+.design1terms .select2-search__field{
+    font-size: 14px;
+    margin: 5px;
+    display: block;
+}
+.select2-results__option{
+    font-size: 11px !important;
+}
+.add_more_cate:hover ,.remove_single_cate:hover{
+  cursor: pointer;
+}
+.remove_single_cate{
+    display: none;
+}
+
+/**/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+.slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+ /* Delete Single Product in import List */
+
+#listofitems td a {
+  display: none;
+  text-decoration: none;
+}
+
+#listofitems td a span {
+  color: red;
+  font-size: 12px;
+}
+
+#listofitems tr:hover td a {
+  display: inline;
+}
