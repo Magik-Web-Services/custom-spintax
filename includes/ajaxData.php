@@ -7,20 +7,35 @@ if (!function_exists('get_post_data')) {
 	function get_post_data()
 	{
 		global $wpdb;
-		$prefix = $wpdb->prefix;
-		if(isset($_POST) && !empty($_POST)){
+		$sql = "SELECT * FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = 'post' LIMIT 0 , 10";
+		$posts = $wpdb->get_results($sql);
 
-			// $data = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$prefix}posts WHERE post_type = post"));	
-			// $data = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$prefix}posts  LIMIT 0 , 10"));	
+		// echo "<pre>";
+		// print_r($posts);
+		// echo "</pre>";
+		// die()
 
-			// echo "<pre>";
-			// print_r ($data);
-			// echo "</pre>";
+		$data = array();
+
+		foreach ($posts as $post) {
+			$data[] = array(
+				'ID' => $post->ID,
+				'post_title' => $post->post_title,
+				'post_content' => $post->post_content,
+				// Add more fields as needed
+			);
 		}
+		$output = array(
+			"recordsFiltered" 	=> 	1,
+			"recordsTotal"  	=>  1,
+			"data"				=>	$data
+		);
+
+		wp_send_json($output);
 		die;
 	}
 }
 
 
-add_action('wp_ajax_get_post_data', 'get_post_data');	
-add_action( 'wp_ajax_nopriv_get_post_data', 'get_post_data' );
+add_action('wp_ajax_get_post_data', 'get_post_data');
+add_action('wp_ajax_nopriv_get_post_data', 'get_post_data');

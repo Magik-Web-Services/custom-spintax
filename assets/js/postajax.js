@@ -1,6 +1,10 @@
 // Bulk Edit
 jQuery(document).ready(function () {
     jQuery('#bulkedit').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "pageLength": 10,
+        responsive: true,
         "ajax": {
             url: MyAjax.ajaxurl,
             type: "POST",
@@ -9,6 +13,12 @@ jQuery(document).ready(function () {
                 "action": 'get_post_data',
             }
         },
+        "columns": [
+            { "data": "ID" },
+            { "data": "post_title" },
+            { "data": "post_content" },
+            // Add more columns as needed
+        ]
     });
 });
 

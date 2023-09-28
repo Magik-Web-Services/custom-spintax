@@ -21,16 +21,6 @@ function spintax_bulk_edit_post_setting_html()
 {
 
 // Get Posts
-
-$args = array(
-    'post_type'  => 'post',
-    'posts_per_page' => -1
-);
-$sheetresults = get_posts( $args );
-
-// echo "<pre>";
-// print_r($sheetresults);
-// echo "</pre>";
 ?>
     <div class="container-fluid clear">
         <div class="row">
@@ -39,16 +29,14 @@ $sheetresults = get_posts( $args );
                     <table id="bulkedit" class="table table-hover my-0 dt-responsive nowrap" style="width:100%;margin-top: 15px !important;margin-bottom: 15px !important;">
                         <thead>
                             <tr>
-                                <th><?php echo __('#', 'spintax-text'); ?></th>
-                                <th><?php echo __('Item ID', 'spintax-text'); ?></th>
-                                <th><?php echo __('Title', 'spintax-text'); ?></th>
-                                <th><?php echo __('Type', 'spintax-text'); ?></th>
-                                <th><?php echo __('Category', 'spintax-text'); ?></th>
-                                <th><?php echo __('Tag', 'spintax-text'); ?></th>
+                            <!-- <th><?php // echo __('#', 'spintax-text'); ?></th> -->
+                            <th><?php  echo __('Item ID', 'spintax-text'); ?></th>
+                            <th><?php  echo __('Title ', 'spintax-text'); ?></th>
+                            <th><?php  echo __('Category', 'spintax-text'); ?></th>
+                            <th><?php  echo __('Tag', 'spintax-text'); ?></th>
                             </tr>
                         </thead>
                         <tbody>
-
                         </tbody>
                     </table>
                 </div>
