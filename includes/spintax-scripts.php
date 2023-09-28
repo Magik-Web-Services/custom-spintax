@@ -28,7 +28,7 @@ function spntax_admin_styles_and_scripts()
     wp_enqueue_script(SPINTAX_NAME . '-select21', SPINTAX_LIBS . 'libs/select2/js/select2.full.min.js', array('jquery'), false, SPINTAX_VERSON);
     wp_enqueue_script(SPINTAX_NAME . '-adminnew', SPINTAX_JS . 'customspin.js', array(), false, SPINTAX_VERSON);
     // Add
-    wp_enqueue_script(SPINTAX_NAME . '-postajax', SPINTAX_JS . 'postajax.js', array(), false, SPINTAX_VERSON);
+    wp_enqueue_script(SPINTAX_NAME . '-postajaxs', SPINTAX_JS . 'postajax.js', array(), false, SPINTAX_VERSON);
 
 
     $admin_url = strtok(admin_url('admin-ajax.php', (is_ssl() ? 'https' : 'http')), '?');

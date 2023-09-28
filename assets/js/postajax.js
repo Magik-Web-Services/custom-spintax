@@ -6,9 +6,7 @@ jQuery(document).ready(function () {
             type: "POST",
     
             data: {
-                "module": 'password',
-                "action": 'get_new_pass',
-                'security_nonce': security_nonce
+                "action": 'get_post_data',
             }
         },
     });
