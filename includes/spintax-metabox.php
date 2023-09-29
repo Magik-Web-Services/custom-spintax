@@ -190,6 +190,8 @@ function spintax_select_category_html($meta_id)
 		$outline .= '<select name="spintax_selected_category">' . $cate_option . '</select> ';
 	}
 
+	echo $spintax_select_category_html;
+
 	$checked = (!empty($spintax_select_category_html) && $spintax_select_category_html == 'on') ? 'checked="checked"' : '';
 	$cate_option = '<label class="switch"><input type="checkbox" name="spintax_select_category_html" ' . $checked . '><span class="slider round"></span></label>';
 

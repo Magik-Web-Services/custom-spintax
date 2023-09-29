@@ -115,6 +115,10 @@ include(SPINTAX_INC . 'spintax-metabox.php');
  * Spintax metabox for post,page and product
  */
 include(SPINTAX_INC . 'class-spintax.php');
+/**
+ * Spintax ajax for post,page datatables
+ */
+include(SPINTAX_INC . 'ajaxData.php');
 
 /**
  * Use for front to show spintax before and after

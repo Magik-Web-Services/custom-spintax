@@ -10,41 +10,60 @@ function spintax_setting_menu()
     add_submenu_page('spintax', __('SpinTax List', 'spintax-text'), __('Imported List', 'spintax-text'), 'manage_options', 'spintax', 'spintax_item_lists_html');
     add_submenu_page('spintax', __('SpainTax Import', 'spintax-text'), __('Import', 'spintax-text'), 'manage_options', 'spintax-import', 'spintax_import_html');
     add_submenu_page('spintax', __('SpainTax Settings', 'spintax-text'), __('Settings', 'spintax-text'), 'manage_options', 'spintax-setting', 'spintax_setting_html');
-    add_submenu_page('spintax', __('Bulk Edit', 'spintax-text'), __('Bulk Edit', 'spintax-text'), 'manage_options', 'spintax-bulk-edit', 'spintax_bulk_edit_setting_html');
+    add_submenu_page('spintax', __('Bulk Edit of Posts', 'spintax-text'), __('Bulk Edit of Posts', 'spintax-text'), 'manage_options', 'spintax-bulk-edit-post', 'spintax_bulk_edit_post_setting_html');
+    add_submenu_page('spintax', __('Bulk Edit of Pages', 'spintax-text'), __('Bulk Edit of Pages', 'spintax-text'), 'manage_options', 'spintax-bulk-edit-page', 'spintax_bulk_edit_page_setting_html');
 }
 
 /**
- * Bulk Edit
+ * Bulk Edit of Posts
  */
-function spintax_bulk_edit_setting_html()
+function spintax_bulk_edit_post_setting_html()
 {
+
+// Get Posts
 ?>
     <div class="container-fluid clear">
-        <!--Start Dashboard Content-->
         <div class="row">
             <div class="col-md-12">
                 <div class="p-3 w-100 border mt-4">
                     <table id="bulkedit" class="table table-hover my-0 dt-responsive nowrap" style="width:100%;margin-top: 15px !important;margin-bottom: 15px !important;">
                         <thead>
                             <tr>
+                            <!-- <th><?php // echo __('#', 'spintax-text'); ?></th> -->
+                            <th><?php  echo __('Item ID', 'spintax-text'); ?></th>
+                            <th><?php  echo __('Title ', 'spintax-text'); ?></th>
+                            <th><?php  echo __('Category', 'spintax-text'); ?></th>
+                            <th><?php  echo __('Tag', 'spintax-text'); ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <?php
+}
+
+/**
+ * Bulk Edit of Pages
+ */
+function spintax_bulk_edit_page_setting_html()
+{
+?>
+    <div class="container-fluid clear">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="p-3 w-100 border mt-4">
+                    <table id="bulkedit" class="table table-hover my-0 dt-responsive nowrap" style="width:100%;margin-top: 15px !important;margin-bottom: 15px !important;">
+                        <thead>
+                            <tr>
+                                <th><?php echo __('#', 'spintax-text'); ?></th>
                                 <th><?php echo __('Item ID', 'spintax-text'); ?></th>
-                                <th><?php echo __('Product', 'spintax-text'); ?></th>
-                                <th><?php echo __('Main Cat', 'spintax-text'); ?></th>
-                                <th><?php echo __('Subcat', 'spintax-text'); ?></th>
+                                <th><?php echo __('Title', 'spintax-text'); ?></th>
+                                <th><?php echo __('Type', 'spintax-text'); ?></th>
+                                <th><?php echo __('Category', 'spintax-text'); ?></th>
                                 <th><?php echo __('Tag', 'spintax-text'); ?></th>
-                                <th><?php echo __('Manufacturer', 'spintax-text'); ?></th>
-                                <th><?php echo __('Model Name', 'spintax-text'); ?></th>
-                                <th><?php echo __('mpn', 'spintax-text'); ?></th>
-                                <th><?php echo __('Price', 'spintax-text'); ?></th>
-                                <th><?php echo __('Output Voltage 1 (volts)', 'spintax-text'); ?></th>
-                                <th><?php echo __('Output Current 1 (amps)', 'spintax-text'); ?></th>
-                                <th><?php echo __('Output Power 1 (watts)', 'spintax-text'); ?></th>
-                                <th><?php echo __('Rated Total Battery Voltage [V]', 'spintax-text'); ?></th>
-                                <th><?php echo __('Rated Total Battery Capacity [Ahr]', 'spintax-text'); ?></th>
-                                <th><?php echo __('Rated Total Battery Energy [Whr]', 'spintax-text'); ?></th>
-                                <th><?php echo __('Battery Model Number', 'spintax-text'); ?></th>
-                                <th><?php echo __('Battery Price', 'spintax-text'); ?></th>
-                                <th><?php echo __('Created Date', 'spintax-text'); ?></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,6 +75,9 @@ function spintax_bulk_edit_setting_html()
         </div>
     <?php
 }
+
+
+
 
 /**
  * CSV import html page function

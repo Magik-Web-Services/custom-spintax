@@ -9,17 +9,6 @@ jQuery(document).ready(function () {
 	// get_category_by_selected();
 });
 
-// Bulk Edit
-jQuery(document).ready(function () {
-	jQuery('#bulkedit').DataTable({
-		paging: false,
-		ordering: false,
-		info: false,
-		searching: false
-	});
-	jQuery('#bulkedit').DataTable();
-});
-
 /**
   * Meta box
   * */
