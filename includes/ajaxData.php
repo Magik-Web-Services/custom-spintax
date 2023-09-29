@@ -6,14 +6,20 @@
 if (!function_exists('get_post_data')) {
 	function get_post_data()
 	{
-		global $wpdb;
-		$sql = "SELECT * FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = 'post' LIMIT 0 , 10";
-		$posts = $wpdb->get_results($sql);
 
-		// echo "<pre>";
-		// print_r($posts);
-		// echo "</pre>";
-		// die()
+		$params = $_REQUEST;
+
+
+		global $wpdb;
+
+		// get Data by datatable
+		$tsql = "SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = 'post'";
+		$total_posts = $wpdb->get_var($tsql);
+
+		// get Data by datatable
+		$sql = "SELECT * FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = 'post' ";
+		$sql .=  "LIMIT ". $params['start']." , ".$params['length'];
+		$posts = $wpdb->get_results($sql);
 
 		$data = array();
 
@@ -26,9 +32,9 @@ if (!function_exists('get_post_data')) {
 			);
 		}
 		$output = array(
-			"recordsFiltered" 	=> 	1,
-			"recordsTotal"  	=>  1,
-			"data"				=>	$data
+			"recordsFiltered" 	=> 	$total_posts,
+			"recordsTotal"  	=>  $total_posts,
+			"data"				=>	$data,
 		);
 
 		wp_send_json($output);
